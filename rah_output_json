@@ -1,0 +1,28 @@
+; Content-type: application/json; charset=utf-8
+{
+   "source": {
+      "title": "Mosman Events",
+      "agency": "Mosman Council",
+      "agency_url": "http://events.mosman.nsw.gov.au",
+      "disclaimer": "http://events.mosman.nsw.gov.au/about/disclaimer",
+      "issue-time": "<txp:upm_datetime function="date" format="c" />"
+   },
+   "events": {
+      "event": [
+
+<txp:hide>#######  Council json Feed  ########</txp:hide>
+
+<txp:smd_if field="urlvar:type" operator="in" value="council">
+    <txp:article_custom limit="999" section="events" council_event= "yes" time="any" id='<txp:skp_act_plg />'>
+  
+    
+    {   
+        "event_id": <txp:article_id />,
+        "headline": "<txp:title no_widow="0" />",
+        
+    }
+</txp:article_custom>
+</txp:smd_if>
+    ]
+   }
+}
